@@ -19,7 +19,8 @@ pipeline {
             steps {
                 script {
                     docker.image('maven:3.9.6-eclipse-temurin-17').inside {
-                        sh 'mvn clean package -DskipTests'
+                        sh 'chmod +x mvnw' // ensure it's executable
+                        sh './mvnw clean package -DskipTests'
                     }
                 }
             }
@@ -29,7 +30,7 @@ pipeline {
             steps {
                 script {
                     docker.image('maven:3.9.6-eclipse-temurin-17').inside {
-                        sh 'mvn test'
+                        sh './mvnw test'
                     }
                 }
             }
@@ -37,6 +38,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
+                sh 'chmod +x mvnw' // if mvnw is used in Dockerfile, ensure it's executable
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
