@@ -11,27 +11,36 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                 git branch: 'master', url: 'https://github.com/Smiley1451/auth-service.git'
+                git branch: 'master', url: 'https://github.com/Smiley1451/auth-service.git'
             }
         }
 
         stage('Build') {
+            agent {
+                docker {
+                    image 'maven:3.9.6-eclipse-temurin-17'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
+            }
             steps {
-                sh './mvnw clean package -DskipTests'
+                sh 'mvn clean package -DskipTests'
             }
         }
 
         stage('Test') {
+            agent {
+                docker {
+                    image 'maven:3.9.6-eclipse-temurin-17'
+                }
+            }
             steps {
-                sh './mvnw test'
+                sh 'mvn test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
-                }
+                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
 
