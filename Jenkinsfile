@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven-3.9.6' // The name you gave Maven in Jenkins Tools
+        jdk 'jdk-21'         // The name you gave your manually installed JDK 21
+    }
+
     environment {
         IMAGE_NAME = "smileyishere1008/auth-service"
         IMAGE_TAG = "latest"
@@ -17,28 +22,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
-                    docker.image('maven:3.9.6-eclipse-temurin-17').inside {
-                        sh 'chmod +x mvnw' // ensure it's executable
-                        sh './mvnw clean package -DskipTests'
-                    }
-                }
+                sh 'chmod +x mvnw'
+                sh './mvnw clean package -DskipTests'
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    docker.image('maven:3.9.6-eclipse-temurin-17').inside {
-                        sh './mvnw test'
-                    }
-                }
+                sh './mvnw test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'chmod +x mvnw' // if mvnw is used in Dockerfile, ensure it's executable
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
