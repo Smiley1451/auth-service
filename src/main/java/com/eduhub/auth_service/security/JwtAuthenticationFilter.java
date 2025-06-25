@@ -17,9 +17,10 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+
 public class JwtAuthenticationFilter implements WebFilter {
 
-    private final JwtService jwtService;
+    private  JwtService jwtService;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {

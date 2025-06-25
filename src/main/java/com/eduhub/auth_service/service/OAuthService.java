@@ -78,14 +78,20 @@ public class OAuthService {
     }
 
     private AuthResponse generateAuthResponse(User user) {
+        String accessToken = jwtService.generateToken(
+                user.getEmail(),
+                Collections.singleton(new SimpleGrantedAuthority(user.getRole().name()))
+        );
+
+        String refreshToken = jwtService.generateRefreshToken(user.getEmail());
+
         return new AuthResponse(
-                jwtService.generateToken(
-                        user.getEmail(),
-                        Collections.singleton(new SimpleGrantedAuthority(user.getRole().name()))
-                ),
+                accessToken,
                 user.getId(),
                 user.getRole(),
-                user.getEmail()
+                user.getEmail(),
+                refreshToken
         );
     }
+
 }

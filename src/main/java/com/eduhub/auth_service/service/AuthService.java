@@ -204,13 +204,16 @@ public class AuthService {
                 });
     }
 
-
     public Mono<Void> logout(String token) {
-        return jwtService.blacklistToken(token)
-                .then(ReactiveSecurityContextHolder.getContext()
-                        .map(SecurityContext::getAuthentication)
-                        .flatMap(auth -> redisOperations.delete("session:" + auth.getPrincipal())
-                                .doOnSuccess(result -> log.info("Session cleared for user: {}", auth.getPrincipal()))
-                                .then())); // convert Mono<Long> to Mono<Void>
+        return ReactiveSecurityContextHolder.getContext()
+                .map(SecurityContext::getAuthentication)
+                .flatMap(auth -> {
+                    String userId = auth.getPrincipal().toString(); // assuming principal is userId or username
+                    return jwtService.blacklistToken(token, userId) // pass both token and userId
+                            .then(redisOperations.delete("session:" + userId)
+                                    .doOnSuccess(result -> log.info("Session cleared for user: {}", userId)))
+                            .then(); // convert Mono<Long> to Mono<Void>
+                });
     }
+
 }

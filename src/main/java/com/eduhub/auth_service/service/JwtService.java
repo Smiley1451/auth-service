@@ -105,9 +105,14 @@ public class JwtService {
         return blacklistedTokenRepository.existsByTokenHash(token)
                 .map(exists -> !exists && !isTokenExpired(token));
     }
-
-    public Mono<Void> blacklistToken(String token) {
-        return blacklistedTokenRepository.save(new BlacklistedToken(token, LocalDateTime.now()))
-                .then();
+    public Mono<Void> blacklistToken(String token, String userId) {
+        return blacklistedTokenRepository.save(
+                BlacklistedToken.builder()
+                        .tokenHash(token)
+                        .userId(userId)
+                        .expiresAt(LocalDateTime.now().plusHours(2)) // you can also extract expiry from JWT
+                        .build()
+        ).then();
     }
+
 }
