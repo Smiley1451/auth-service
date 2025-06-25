@@ -1,0 +1,216 @@
+package com.eduhub.auth_service.service;
+
+import org.springframework.security.core.context.SecurityContext;
+import com.eduhub.auth_service.constants.Role;
+import com.eduhub.auth_service.constants.Status;
+import com.eduhub.auth_service.dto.*;
+import com.eduhub.auth_service.entity.User;
+import com.eduhub.auth_service.exception.*;
+import com.eduhub.auth_service.kafka.UserCreatedProducer;
+import com.eduhub.auth_service.repository.UserRepository;
+import com.eduhub.auth_service.util.OtpUtil;
+import io.github.resilience4j.retry.Retry;
+import io.github.resilience4j.retry.RetryConfig;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.ReactiveRedisOperations;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.ReactiveSecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
+
+import jakarta.validation.Valid;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.UUID;
+
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class AuthService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
+    @Qualifier("authRedisOperations")
+    private final ReactiveRedisOperations<String, String> redisOperations;
+    private final UserCreatedProducer userCreatedProducer;
+    private final OtpUtil otpUtil;
+
+    private final Retry retry = Retry.of("kafka-retry", RetryConfig.custom()
+            .maxAttempts(3)
+            .waitDuration(Duration.ofSeconds(1))
+            .build());
+
+
+    public Mono<AuthResponse> signup(@Valid SignupRequest request) {
+        request.normalize(); // Normalize email and password
+        return validateTeacherCreation(request)
+                .then(Mono.defer(() -> userRepository.existsByEmail(request.getEmail())
+                        .flatMap(exists -> {
+                            if (exists) {
+                                return Mono.error(new UserAlreadyExistsException("Email already in use"));
+                            }
+
+                            User user = User.builder()
+                                    .id(UUID.randomUUID().toString())
+                                    .email(request.getEmail())
+                                    .passwordHash(passwordEncoder.encode(request.getPassword()))
+                                    .role(request.getRole())
+                                    .status(Status.PENDING)
+                                    .mfaEnabled(request.isMfaEnabled())
+                                    .createdAt(LocalDateTime.now())
+                                    .updatedAt(LocalDateTime.now())
+                                    .build();
+
+                            return userRepository.save(user)
+                                    .flatMap(savedUser -> sendVerificationOtp(savedUser, "otp")
+                                            .then(createSession(savedUser))
+                                            .then(Mono.fromCallable(() -> retry.executeSupplier(() ->
+                                                            userCreatedProducer.sendUserCreatedEvent(savedUser, "EMAIL").block()))
+                                                    .doOnSuccess(result -> log.info("User created event sent for email: {}", savedUser.getEmail()))
+                                                    .doOnError(e -> log.error("Failed to send user created event for email: {}", savedUser.getEmail(), e)))
+                                            .thenReturn(generateAuthResponse(savedUser)));
+                        })));
+    }
+
+    private Mono<Void> validateTeacherCreation(SignupRequest request) {
+        if (request.getRole() == Role.TEACHER) {
+            return ReactiveSecurityContextHolder.getContext()
+                    .map(SecurityContext::getAuthentication)
+                    .filter(auth -> auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN")))
+                    .switchIfEmpty(Mono.error(new AccessDeniedException("Only admins can create teacher accounts")))
+                    .then();
+        }
+        return Mono.empty();
+    }
+
+
+    private Mono<Boolean> sendVerificationOtp(User user, String prefix) {
+        String otp = otpUtil.generateOtp();
+        return redisOperations.opsForValue()
+                .set(prefix + ":" + user.getEmail(), otp, Duration.ofMinutes(5))
+                .doOnSuccess(result -> log.info("OTP sent for {}: {}", user.getEmail(), otp))
+                .thenReturn(true);
+    }
+
+
+    private Mono<Void> createSession(User user) {
+        String sessionId = UUID.randomUUID().toString();
+        return redisOperations.opsForValue()
+                .set("session:" + user.getId(), sessionId, Duration.ofHours(24))
+                .doOnSuccess(result -> log.info("Session created for user: {}", user.getId()))
+                .then();
+    }
+
+    private AuthResponse generateAuthResponse(User user) {
+        return new AuthResponse(
+                jwtService.generateToken(
+                        user.getEmail(),
+                        Collections.singleton(new SimpleGrantedAuthority(user.getRole().name()))
+                ),
+                user.getId(),
+                user.getRole(),
+                user.getEmail(),
+                jwtService.generateRefreshToken(user.getEmail())
+        );
+    }
+
+
+    public Mono<AuthResponse> login(@Valid LoginRequest request) {
+        return userRepository.findActiveByEmail(request.getEmail().trim().toLowerCase())
+                .switchIfEmpty(Mono.error(new InvalidCredentialsException("Invalid email or password")))
+                .flatMap(user -> {
+                    if (!passwordEncoder.matches(request.getPassword(), user.getPasswordHash())) {
+                        return Mono.error(new InvalidCredentialsException("Invalid email or password"));
+                    }
+                    if (user.isMfaEnabled()) {
+                        return sendVerificationOtp(user, "otp")
+                                .then(Mono.error(new MfaRequiredException("MFA OTP sent to email")));
+                    }
+                    return createSession(user)
+                            .thenReturn(generateAuthResponse(user))
+                            .doOnSuccess(response -> log.info("User logged in: {}", user.getEmail()));
+                });
+    }
+
+
+    public Mono<AuthResponse> verifyMfa(@Valid MfaRequest request) {
+        return redisOperations.opsForValue().get("otp:" + request.getEmail().trim().toLowerCase())
+                .switchIfEmpty(Mono.error(new InvalidOtpException("OTP expired or invalid")))
+                .flatMap(otp -> {
+                    if (!otp.equals(request.getOtp())) {
+                        return Mono.error(new InvalidOtpException("Invalid OTP"));
+                    }
+                    return userRepository.findActiveByEmail(request.getEmail().trim().toLowerCase())
+                            .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                            .flatMap(user -> createSession(user)
+                                    .thenReturn(generateAuthResponse(user))
+                                    .doOnSuccess(response -> log.info("MFA verified for user: {}", user.getEmail())));
+                });
+    }
+
+
+    public Mono<AuthResponse> refreshToken(@Valid RefreshTokenRequest request) {
+        return jwtService.validateRefreshToken(request.getRefreshToken())
+                .flatMap(valid -> {
+                    if (!valid) {
+                        return Mono.error(new InvalidTokenException("Invalid refresh token"));
+                    }
+                    return jwtService.getUsername(request.getRefreshToken())
+                            .flatMap(username -> userRepository.findActiveByEmail(username)
+                                    .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                                    .flatMap(user -> createSession(user)
+                                            .thenReturn(generateAuthResponse(user))
+                                            .doOnSuccess(response -> log.info("Token refreshed for user: {}", user.getEmail()))));
+                });
+    }
+
+
+    public Mono<Void> requestPasswordReset(String email) {
+        final String normalizedEmail = email.trim().toLowerCase();
+
+        return userRepository.findByEmail(normalizedEmail)
+                .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                .flatMap(user -> sendVerificationOtp(user, "reset")
+                        .doOnSuccess(result -> log.info("Password reset OTP sent for: {}", normalizedEmail))
+                        .then());
+    }
+
+
+    public Mono<Void> resetPassword(@Valid ResetPasswordRequest request) {
+        String email = request.getEmail().trim().toLowerCase();
+        return redisOperations.opsForValue().get("reset:" + email)
+                .switchIfEmpty(Mono.error(new InvalidOtpException("OTP expired or invalid")))
+                .flatMap(otp -> {
+                    if (!otp.equals(request.getOtp())) {
+                        return Mono.error(new InvalidOtpException("Invalid OTP"));
+                    }
+                    return userRepository.findByEmail(email)
+                            .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                            .flatMap(user -> {
+                                user.setPasswordHash(passwordEncoder.encode(request.getNewPassword()));
+                                user.setUpdatedAt(LocalDateTime.now());
+                                return userRepository.save(user);
+                            })
+                            .then(redisOperations.delete("reset:" + email))
+                            .doOnSuccess(result -> log.info("Password reset for user: {}", email))
+                            .then();
+                });
+    }
+
+
+    public Mono<Void> logout(String token) {
+        return jwtService.blacklistToken(token)
+                .then(ReactiveSecurityContextHolder.getContext()
+                        .map(SecurityContext::getAuthentication)
+                        .flatMap(auth -> redisOperations.delete("session:" + auth.getPrincipal())
+                                .doOnSuccess(result -> log.info("Session cleared for user: {}", auth.getPrincipal()))
+                                .then())); // convert Mono<Long> to Mono<Void>
+    }
+}
