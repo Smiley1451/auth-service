@@ -1,6 +1,5 @@
 package com.eduhub.auth_service.service;
 
-import org.springframework.security.core.context.SecurityContext;
 import com.eduhub.auth_service.constants.Role;
 import com.eduhub.auth_service.constants.Status;
 import com.eduhub.auth_service.dto.*;
@@ -28,7 +27,6 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.UUID;
 
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -47,9 +45,8 @@ public class AuthService {
             .waitDuration(Duration.ofSeconds(1))
             .build());
 
-
     public Mono<AuthResponse> signup(@Valid SignupRequest request) {
-        request.normalize(); // Normalize email and password
+        request.normalize();
         return validateTeacherCreation(request)
                 .then(Mono.defer(() -> userRepository.existsByEmail(request.getEmail())
                         .flatMap(exists -> {
@@ -58,7 +55,7 @@ public class AuthService {
                             }
 
                             User user = User.builder()
-                                    .id(UUID.randomUUID().toString())
+                                    .id(UUID.randomUUID())
                                     .email(request.getEmail())
                                     .passwordHash(passwordEncoder.encode(request.getPassword()))
                                     .role(request.getRole())
@@ -82,14 +79,13 @@ public class AuthService {
     private Mono<Void> validateTeacherCreation(SignupRequest request) {
         if (request.getRole() == Role.TEACHER) {
             return ReactiveSecurityContextHolder.getContext()
-                    .map(SecurityContext::getAuthentication)
+                    .map(ctx -> ctx.getAuthentication())
                     .filter(auth -> auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN")))
                     .switchIfEmpty(Mono.error(new AccessDeniedException("Only admins can create teacher accounts")))
                     .then();
         }
         return Mono.empty();
     }
-
 
     private Mono<Boolean> sendVerificationOtp(User user, String prefix) {
         String otp = otpUtil.generateOtp();
@@ -98,7 +94,6 @@ public class AuthService {
                 .doOnSuccess(result -> log.info("OTP sent for {}: {}", user.getEmail(), otp))
                 .thenReturn(true);
     }
-
 
     private Mono<Void> createSession(User user) {
         String sessionId = UUID.randomUUID().toString();
@@ -112,21 +107,20 @@ public class AuthService {
         return new AuthResponse(
                 jwtService.generateToken(
                         user.getEmail(),
-                        Collections.singleton(new SimpleGrantedAuthority(user.getRole().name()))
+                        Collections.singleton(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
                 ),
-                user.getId(),
+                user.getId().toString(),
                 user.getRole(),
                 user.getEmail(),
                 jwtService.generateRefreshToken(user.getEmail())
         );
     }
 
-
     public Mono<AuthResponse> login(@Valid LoginRequest request) {
         return userRepository.findActiveByEmail(request.getEmail().trim().toLowerCase())
                 .switchIfEmpty(Mono.error(new InvalidCredentialsException("Invalid email or password")))
                 .flatMap(user -> {
-                    if (!passwordEncoder.matches(request.getPassword(), user.getPasswordHash())) {
+                    if (user.getPasswordHash() == null || !passwordEncoder.matches(request.getPassword(), user.getPasswordHash())) {
                         return Mono.error(new InvalidCredentialsException("Invalid email or password"));
                     }
                     if (user.isMfaEnabled()) {
@@ -138,7 +132,6 @@ public class AuthService {
                             .doOnSuccess(response -> log.info("User logged in: {}", user.getEmail()));
                 });
     }
-
 
     public Mono<AuthResponse> verifyMfa(@Valid MfaRequest request) {
         return redisOperations.opsForValue().get("otp:" + request.getEmail().trim().toLowerCase())
@@ -155,7 +148,6 @@ public class AuthService {
                 });
     }
 
-
     public Mono<AuthResponse> refreshToken(@Valid RefreshTokenRequest request) {
         return jwtService.validateRefreshToken(request.getRefreshToken())
                 .flatMap(valid -> {
@@ -171,17 +163,14 @@ public class AuthService {
                 });
     }
 
-
     public Mono<Void> requestPasswordReset(String email) {
         final String normalizedEmail = email.trim().toLowerCase();
-
         return userRepository.findByEmail(normalizedEmail)
                 .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
                 .flatMap(user -> sendVerificationOtp(user, "reset")
                         .doOnSuccess(result -> log.info("Password reset OTP sent for: {}", normalizedEmail))
                         .then());
     }
-
 
     public Mono<Void> resetPassword(@Valid ResetPasswordRequest request) {
         String email = request.getEmail().trim().toLowerCase();
@@ -206,14 +195,15 @@ public class AuthService {
 
     public Mono<Void> logout(String token) {
         return ReactiveSecurityContextHolder.getContext()
-                .map(SecurityContext::getAuthentication)
+                .map(ctx -> ctx.getAuthentication())
                 .flatMap(auth -> {
-                    String userId = auth.getPrincipal().toString(); // assuming principal is userId or username
-                    return jwtService.blacklistToken(token, userId) // pass both token and userId
-                            .then(redisOperations.delete("session:" + userId)
-                                    .doOnSuccess(result -> log.info("Session cleared for user: {}", userId)))
-                            .then(); // convert Mono<Long> to Mono<Void>
+                    String email = auth.getPrincipal().toString();
+                    return userRepository.findByEmail(email)
+                            .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                            .flatMap(user -> jwtService.blacklistToken(token, user.getId().toString())
+                                    .then(redisOperations.delete("session:" + user.getId()))
+                                    .doOnSuccess(result -> log.info("Session cleared for user: {}", user.getId())))
+                            .then();
                 });
     }
-
 }

@@ -17,10 +17,9 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-
 public class JwtAuthenticationFilter implements WebFilter {
 
-    private  JwtService jwtService;
+    private final JwtService jwtService;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
@@ -40,7 +39,7 @@ public class JwtAuthenticationFilter implements WebFilter {
                             .zipWith(jwtService.getAuthorities(token))
                             .flatMap(tuple -> {
                                 String username = tuple.getT1();
-                                List<GrantedAuthority> authorities = tuple.getT2();  // Explicit List<GrantedAuthority>
+                                List<GrantedAuthority> authorities = tuple.getT2();
 
                                 if (username == null || authorities == null) {
                                     return chain.filter(exchange);
@@ -49,7 +48,7 @@ public class JwtAuthenticationFilter implements WebFilter {
                                 Authentication authentication = new UsernamePasswordAuthenticationToken(
                                         username,
                                         null,
-                                        authorities  // This now matches the expected type
+                                        authorities
                                 );
 
                                 return chain.filter(exchange)

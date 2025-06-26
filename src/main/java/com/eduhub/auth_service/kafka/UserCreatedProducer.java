@@ -1,6 +1,5 @@
 package com.eduhub.auth_service.kafka;
 
-import java.time.Instant;
 import com.eduhub.auth_service.entity.User;
 import com.eduhub.auth_service.exception.EventPublishingException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,6 +11,8 @@ import org.springframework.kafka.core.reactive.ReactiveKafkaProducerTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.kafka.sender.SenderResult;
+
+import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +27,7 @@ public class UserCreatedProducer {
 
     public Mono<SenderResult<Void>> sendUserCreatedEvent(User user, String source) {
         UserCreatedEvent event = new UserCreatedEvent(
-                user.getId(),
+                user.getId().toString(),
                 user.getEmail(),
                 user.getRole(),
                 Instant.now(),
@@ -35,7 +36,7 @@ public class UserCreatedProducer {
 
         try {
             String message = objectMapper.writeValueAsString(event);
-            return reactiveKafkaProducerTemplate.send(topic, user.getId(), message)
+            return reactiveKafkaProducerTemplate.send(topic, user.getId().toString(), message)
                     .doOnSuccess(result -> log.info("Sent user created event: {}", event))
                     .doOnError(e -> log.error("Send failed for event: {}", event, e));
         } catch (JsonProcessingException e) {

@@ -8,7 +8,6 @@ import com.eduhub.auth_service.dto.OAuth2UserInfo;
 import com.eduhub.auth_service.entity.OAuthUser;
 import com.eduhub.auth_service.entity.User;
 import com.eduhub.auth_service.exception.AccountNotActiveException;
-import com.eduhub.auth_service.exception.OAuth2AuthenticationProcessingException;
 import com.eduhub.auth_service.kafka.UserCreatedProducer;
 import com.eduhub.auth_service.repository.OAuthUserRepository;
 import com.eduhub.auth_service.repository.UserRepository;
@@ -32,7 +31,7 @@ public class OAuthService {
 
     public Mono<AuthResponse> processOAuth2User(OAuth2UserInfo oAuth2UserInfo) {
         return oAuthUserRepository.findByProviderAndExternalId(oAuth2UserInfo.getProvider(), oAuth2UserInfo.getId())
-                .flatMap(oAuthUser -> userRepository.findById(oAuthUser.getUserId()))
+                .flatMap(oAuthUser -> userRepository.findById(UUID.fromString(oAuthUser.getUserId())))
                 .switchIfEmpty(Mono.defer(() -> registerNewOAuth2User(oAuth2UserInfo)))
                 .flatMap(user -> {
                     if (user.getStatus() != Status.ACTIVE) {
@@ -44,13 +43,13 @@ public class OAuthService {
 
     private Mono<User> registerNewOAuth2User(OAuth2UserInfo oAuth2UserInfo) {
         return userRepository.findByEmail(oAuth2UserInfo.getEmail())
-                .switchIfEmpty(createNewUserFromOAuth(oAuth2UserInfo))
+                .switchIfEmpty(Mono.defer(() -> createNewUserFromOAuth(oAuth2UserInfo)))
                 .flatMap(user -> {
                     OAuthUser oAuthUser = OAuthUser.builder()
                             .id(UUID.randomUUID().toString())
                             .provider(oAuth2UserInfo.getProvider())
                             .externalId(oAuth2UserInfo.getId())
-                            .userId(user.getId())
+                            .userId(user.getId().toString())
                             .createdAt(LocalDateTime.now())
                             .build();
 
@@ -61,9 +60,9 @@ public class OAuthService {
 
     private Mono<User> createNewUserFromOAuth(OAuth2UserInfo oAuth2UserInfo) {
         User user = User.builder()
-                .id(UUID.randomUUID().toString())
+                .id(UUID.randomUUID())
                 .email(oAuth2UserInfo.getEmail())
-                .passwordHash(UUID.randomUUID().toString())
+                .passwordHash(null)
                 .role(Role.STUDENT)
                 .status(Status.ACTIVE)
                 .createdAt(LocalDateTime.now())
@@ -72,26 +71,25 @@ public class OAuthService {
 
         return userRepository.save(user)
                 .flatMap(savedUser -> userCreatedProducer.sendUserCreatedEvent(
-                        savedUser,
-                        "OAUTH_" + oAuth2UserInfo.getProviderName()))
-                .thenReturn(user);
+                                savedUser,
+                                "OAUTH_" + oAuth2UserInfo.getProvider().name())
+                        .thenReturn(savedUser));
     }
 
     private AuthResponse generateAuthResponse(User user) {
         String accessToken = jwtService.generateToken(
                 user.getEmail(),
-                Collections.singleton(new SimpleGrantedAuthority(user.getRole().name()))
+                Collections.singleton(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
         );
 
         String refreshToken = jwtService.generateRefreshToken(user.getEmail());
 
         return new AuthResponse(
                 accessToken,
-                user.getId(),
+                user.getId().toString(),
                 user.getRole(),
                 user.getEmail(),
                 refreshToken
         );
     }
-
 }

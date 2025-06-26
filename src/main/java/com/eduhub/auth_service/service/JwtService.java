@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -38,7 +39,6 @@ public class JwtService {
 
     public String generateToken(String username, Collection<? extends GrantedAuthority> authorities) {
         SecretKey key = getSigningKey();
-
         return Jwts.builder()
                 .subject(username)
                 .claim("roles", authorities.stream()
@@ -69,7 +69,7 @@ public class JwtService {
             Claims claims = getClaims(token);
             List<String> roles = claims.get("roles", List.class);
             return roles.stream()
-                    .<GrantedAuthority>map(SimpleGrantedAuthority::new)  // Explicit type specification
+                    .map(role -> (GrantedAuthority) new SimpleGrantedAuthority(role))
                     .collect(Collectors.toList());
         }).onErrorResume(e -> Mono.empty());
     }
@@ -105,14 +105,15 @@ public class JwtService {
         return blacklistedTokenRepository.existsByTokenHash(token)
                 .map(exists -> !exists && !isTokenExpired(token));
     }
+
     public Mono<Void> blacklistToken(String token, String userId) {
         return blacklistedTokenRepository.save(
                 BlacklistedToken.builder()
+                        .id(UUID.randomUUID().toString())
                         .tokenHash(token)
                         .userId(userId)
-                        .expiresAt(LocalDateTime.now().plusHours(2)) // you can also extract expiry from JWT
+                        .expiresAt(LocalDateTime.now().plusHours(2))
                         .build()
         ).then();
     }
-
 }
