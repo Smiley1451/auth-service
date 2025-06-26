@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Table(name = "blacklisted_tokens")
 @Getter
@@ -29,7 +30,7 @@ public class BlacklistedToken {
     @Column("expires_at")
     private LocalDateTime expiresAt;
 
-    @NotBlank(message = "User ID cannot be empty")
+    @NotNull(message = "User ID cannot be null")
     @Column("user_id")
-    private String userId;
+    private UUID userId;
 }

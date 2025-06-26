@@ -69,7 +69,7 @@ public class JwtService {
             Claims claims = getClaims(token);
             List<String> roles = claims.get("roles", List.class);
             return roles.stream()
-                    .map(role -> (GrantedAuthority) new SimpleGrantedAuthority(role))
+                    .map(role -> (GrantedAuthority) new SimpleGrantedAuthority(role)) // Explicit cast
                     .collect(Collectors.toList());
         }).onErrorResume(e -> Mono.empty());
     }
@@ -106,7 +106,7 @@ public class JwtService {
                 .map(exists -> !exists && !isTokenExpired(token));
     }
 
-    public Mono<Void> blacklistToken(String token, String userId) {
+    public Mono<Void> blacklistToken(String token, UUID userId) {
         return blacklistedTokenRepository.save(
                 BlacklistedToken.builder()
                         .id(UUID.randomUUID().toString())

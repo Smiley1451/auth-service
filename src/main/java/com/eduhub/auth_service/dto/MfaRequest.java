@@ -1,8 +1,7 @@
 package com.eduhub.auth_service.dto;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +12,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MfaRequest {
-    @NotNull
-    @Email
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email must be valid")
     private String email;
-    @NotNull @Size(min = 6, max = 6) private String otp;
+
+    @NotBlank(message = "OTP cannot be blank")
+    private String otp;
+
+    public void normalize() {
+        if (email != null) {
+            email = email.trim().toLowerCase();
+        }
+        if (otp != null) {
+            otp = otp.trim();
+        }
+    }
 }

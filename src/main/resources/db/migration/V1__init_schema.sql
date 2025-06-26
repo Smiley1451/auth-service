@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS blacklisted_tokens (
                                                   id VARCHAR(36) PRIMARY KEY,
     token_hash TEXT NOT NULL,
     expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
-                             user_id VARCHAR(36) NOT NULL,
-    CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                             user_id UUID NOT NULL,
+                             CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     );
 
 -- Create indexes for performance

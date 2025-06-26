@@ -46,7 +46,8 @@ public class SecurityConfig {
                                 "/auth/reset-password-request",
                                 "/auth/reset-password",
                                 "/auth/mfa",
-                                "/auth/refresh"
+                                "/auth/refresh",
+                                "/auth/verify"
                         ).permitAll()
                         .pathMatchers("/auth/**").hasRole("ADMIN")
                         .pathMatchers("/login/oauth2/code/**").permitAll()
