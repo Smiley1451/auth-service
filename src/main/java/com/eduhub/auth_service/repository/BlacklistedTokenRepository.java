@@ -12,4 +12,5 @@ public interface BlacklistedTokenRepository extends ReactiveCrudRepository<Black
 
     @Query("DELETE FROM blacklisted_tokens WHERE expires_at < NOW()")
     Mono<Void> deleteExpiredTokens();
+
 }

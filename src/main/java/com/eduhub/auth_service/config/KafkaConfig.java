@@ -11,7 +11,6 @@ import reactor.kafka.sender.SenderOptions;
 
 import java.util.HashMap;
 import java.util.Map;
-
 @Configuration
 public class KafkaConfig {
 
@@ -34,6 +33,9 @@ public class KafkaConfig {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.RETRIES_CONFIG, 3);
+        props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 300000);
+        props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 300000);
+        props.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 300000);
 
         return new ReactiveKafkaProducerTemplate<>(SenderOptions.create(props));
     }

@@ -7,22 +7,16 @@ import lombok.Data;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "oauth2")
+@ConfigurationProperties(prefix = "spring.security.oauth2.client.registration")
 public class OAuth2Config {
-    private Google google;
-    private Github github;
+    private Provider google;
+    private Provider github;
 
     @Data
-    public static class Google {
+    public static class Provider {
         private String clientId;
         private String clientSecret;
         private String redirectUri;
-    }
-
-    @Data
-    public static class Github {
-        private String clientId;
-        private String clientSecret;
-        private String redirectUri;
+        private String scope;
     }
 }

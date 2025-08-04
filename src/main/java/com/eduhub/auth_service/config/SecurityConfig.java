@@ -11,12 +11,21 @@ import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.oidc.web.server.logout.OidcClientInitiatedServerLogoutSuccessHandler;
+import org.springframework.security.oauth2.client.registration.ReactiveClientRegistrationRepository;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.logout.ServerLogoutSuccessHandler;
 import reactor.core.publisher.Mono;
 
 @Configuration
 @EnableWebFluxSecurity
 public class SecurityConfig {
+
+    private final ReactiveClientRegistrationRepository clientRegistrationRepository;
+
+    public SecurityConfig(ReactiveClientRegistrationRepository clientRegistrationRepository) {
+        this.clientRegistrationRepository = clientRegistrationRepository;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -37,7 +46,7 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http,
                                                          JwtAuthenticationFilter jwtAuthenticationFilter) {
         return http
-                .csrf(csrf -> csrf.disable())
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .cors(Customizer.withDefaults()) // uses WebConfig's corsConfigurationSource bean
                 .authorizeExchange(auth -> auth
                         .pathMatchers(
@@ -47,14 +56,31 @@ public class SecurityConfig {
                                 "/auth/reset-password",
                                 "/auth/mfa",
                                 "/auth/refresh",
-                                "/auth/verify"
+                                "/auth/verify",
+                                "/api/auth/oauth/success",
+                                "/api/auth/oauth/providers",
+                                "/login/oauth2/code/**"
                         ).permitAll()
-                        .pathMatchers("/auth/**").hasRole("ADMIN")
-                        .pathMatchers("/login/oauth2/code/**").permitAll()
+                        .pathMatchers("/auth/admin/**").hasRole("ADMIN")
                         .anyExchange().authenticated()
                 )
-                .oauth2Login(Customizer.withDefaults())
+                .oauth2Login(oauth2 -> oauth2
+                        .authenticationSuccessHandler((webFilterExchange, authentication) -> {
+                            // Success handled by the OAuthController
+                            return webFilterExchange.getChain().filter(webFilterExchange.getExchange());
+                        })
+                )
+                .logout(logout -> logout
+                        .logoutSuccessHandler(oidcLogoutSuccessHandler())
+                )
                 .addFilterAt(jwtAuthenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION)
                 .build();
+    }
+
+    private ServerLogoutSuccessHandler oidcLogoutSuccessHandler() {
+        OidcClientInitiatedServerLogoutSuccessHandler successHandler =
+                new OidcClientInitiatedServerLogoutSuccessHandler(clientRegistrationRepository);
+        successHandler.setPostLogoutRedirectUri("{baseUrl}");
+        return successHandler;
     }
 }

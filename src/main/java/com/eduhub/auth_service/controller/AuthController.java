@@ -5,7 +5,7 @@ import com.eduhub.auth_service.exception.InvalidOtpException;
 import com.eduhub.auth_service.exception.MfaRequiredException;
 import com.eduhub.auth_service.exception.ResourceNotFoundException;
 import com.eduhub.auth_service.service.AuthService;
-import com.eduhub.auth_service.service.OAuthService;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -32,7 +32,7 @@ import reactor.core.publisher.Mono;
 public class AuthController {
 
     private final AuthService authService;
-    private final OAuthService oAuthService;
+
 
     @Operation(summary = "Register a new user", description = "Creates a new user account with optional MFA")
     @ApiResponses({

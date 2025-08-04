@@ -8,16 +8,14 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Mono;
 
 public interface OAuthUserRepository extends ReactiveCrudRepository<OAuthUser, String> {
-    @Query("SELECT * FROM oauth_users WHERE provider = :provider AND external_id = :externalId")
+
+    @Query("SELECT * FROM oauth_users WHERE provider = :provider::provider AND external_id = :externalId")
     Mono<OAuthUser> findByProviderAndExternalId(
             @Param("provider") OAuthProvider provider,
             @Param("externalId") String externalId
     );
 
-    @Query("SELECT EXISTS(SELECT 1 FROM oauth_users WHERE user_id = :userId)")
-    Mono<Boolean> existsByUserId(@Param("userId") String userId);
-
-    @Query("SELECT * FROM oauth_users WHERE user_id = :userId AND provider = :provider")
+    @Query("SELECT * FROM oauth_users WHERE user_id = :userId AND provider = :provider::provider")
     Mono<OAuthUser> findByUserIdAndProvider(
             @Param("userId") String userId,
             @Param("provider") OAuthProvider provider

@@ -11,9 +11,10 @@ import org.springframework.kafka.core.reactive.ReactiveKafkaProducerTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.kafka.sender.SenderResult;
+import reactor.util.retry.Retry;
 
+import java.time.Duration;
 import java.time.Instant;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -38,8 +39,11 @@ public class UserCreatedProducer {
             String message = objectMapper.writeValueAsString(event);
             return reactiveKafkaProducerTemplate.send(topic, user.getId().toString(), message)
                     .doOnSuccess(result -> log.info("Sent user created event: {}", event))
-                    .doOnError(e -> log.error("Send failed for event: {}", event, e));
+                    .doOnError(e -> log.error("Send failed for event: {}", event, e))
+                    .timeout(Duration.ofSeconds(30))
+                    .retryWhen(Retry.backoff(3, Duration.ofSeconds(1)));
         } catch (JsonProcessingException e) {
+            log.error("Failed to serialize event: {}", event, e);
             return Mono.error(new EventPublishingException("Failed to serialize event", e));
         }
     }

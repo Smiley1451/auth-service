@@ -58,4 +58,6 @@ public interface UserRepository extends ReactiveCrudRepository<User, String> {
             @Param("status") String status,
             @Param("updatedAt") LocalDateTime updatedAt
     );
+
+    Mono<Object> deleteByStatusAndCreatedAtBefore(String name, LocalDateTime cutoff);
 }

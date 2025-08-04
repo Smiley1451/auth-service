@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
@@ -46,50 +47,98 @@ public class AuthService {
             .maxAttempts(3)
             .waitDuration(Duration.ofSeconds(1))
             .build());
+
     public Mono<AuthResponse> signup(@Valid SignupRequest request) {
         request.normalize();
         return validateTeacherCreation(request)
-                .then(Mono.defer(() -> userRepository.existsByEmail(request.getEmail())
-                        .flatMap(exists -> {
-                            if (exists) {
+                .then(Mono.defer(() -> userRepository.findByEmail(request.getEmail())
+                        .flatMap(existingUser -> {
+                            if (existingUser.getStatus() == Status.PENDING) {
+                                return handlePendingUser(existingUser);
+                            } else if (existingUser.getStatus() == Status.ACTIVE) {
                                 return Mono.error(new UserAlreadyExistsException("Email already in use"));
                             }
-
-                            UUID userId = UUID.randomUUID();
-                            return userRepository.saveWithTypeCasting(
-                                            userId,
-                                            request.getEmail(),
-                                            passwordEncoder.encode(request.getPassword()),
-                                            request.getRole().name(),
-                                            Status.PENDING.name(),
-                                            LocalDateTime.now(),
-                                            LocalDateTime.now(),
-                                            request.isMfaEnabled()
-                                    )
-                                    .flatMap(savedUser -> {
-                                        String otp = otpUtil.generateOtp();
-                                        return redisOperations.opsForValue()
-                                                .set("otp:" + savedUser.getEmail(), otp, Duration.ofMinutes(5))
-                                                .then(emailService.sendOtpEmail(savedUser.getEmail(), otp))
-                                                .onErrorResume(e -> {
-                                                    log.error("Failed to send OTP email: {}", e.getMessage());
-                                                    return Mono.error(new EmailSendException("Failed to send OTP email", e));
-                                                })
-                                                .then(createSession(savedUser))
-                                                .then(Mono.fromCallable(() ->
-                                                        retry.executeSupplier(() ->
-                                                                userCreatedProducer.sendUserCreatedEvent(savedUser, "EMAIL").block()
-                                                        )
-                                                ))
-                                                .doOnSuccess(result ->
-                                                        log.info("User created event sent for email: {}", savedUser.getEmail()))
-                                                .doOnError(e ->
-                                                        log.error("Failed to send user created event for email: {}", savedUser.getEmail(), e))
-                                                .thenReturn(generateAuthResponse(savedUser));
-                                    });
-                        })));
+                            return Mono.error(new IllegalStateException("Account in unexpected state"));
+                        })
+                        .switchIfEmpty(createNewUser(request))));
     }
 
+    public Mono<Void> resendOtp(String email) {
+        String normalizedEmail = email.trim().toLowerCase();
+        return userRepository.findByEmail(normalizedEmail)
+                .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
+                .flatMap(user -> {
+                    if (user.getStatus() != Status.PENDING) {
+                        return Mono.error(new IllegalStateException("Account is not pending verification"));
+                    }
+                    String otp = otpUtil.generateOtp();
+                    return redisOperations.opsForValue()
+                            .set("otp:" + user.getEmail(), otp, Duration.ofMinutes(5))
+                            .then(emailService.sendOtpEmail(user.getEmail(), otp))
+                            .onErrorResume(e -> {
+                                log.error("Failed to resend OTP email: {}", e.getMessage());
+                                return Mono.error(new EmailSendException("Failed to resend OTP email", e));
+                            })
+                            .then(); // Convert to Mono<Void>
+                });
+    }
+
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000) // Run daily
+    public void cleanupExpiredPendingAccounts() {
+        LocalDateTime cutoff = LocalDateTime.now().minusDays(7); // 7 days expiration
+        userRepository.deleteByStatusAndCreatedAtBefore(Status.PENDING.name(), cutoff)
+                .doOnSuccess(count -> log.info("Cleaned up {} expired pending accounts", count))
+                .subscribe();
+    }
+
+    private Mono<AuthResponse> handlePendingUser(User user) {
+        String otp = otpUtil.generateOtp();
+        return redisOperations.opsForValue()
+                .set("otp:" + user.getEmail(), otp, Duration.ofMinutes(5))
+                .then(emailService.sendOtpEmail(user.getEmail(), otp))
+                .thenReturn(new AuthResponse(
+                        null,
+                        user.getId().toString(),
+                        user.getRole(),
+                        user.getEmail(),
+                        null
+                ));
+    }
+
+    private Mono<AuthResponse> createNewUser(SignupRequest request) {
+        UUID userId = UUID.randomUUID();
+        return userRepository.saveWithTypeCasting(
+                        userId,
+                        request.getEmail(),
+                        passwordEncoder.encode(request.getPassword()),
+                        request.getRole().name(),
+                        Status.PENDING.name(),
+                        LocalDateTime.now(),
+                        LocalDateTime.now(),
+                        request.isMfaEnabled()
+                )
+                .flatMap(savedUser -> {
+                    String otp = otpUtil.generateOtp();
+                    return redisOperations.opsForValue()
+                            .set("otp:" + savedUser.getEmail(), otp, Duration.ofMinutes(5))
+                            .then(emailService.sendOtpEmail(savedUser.getEmail(), otp))
+                            .onErrorResume(e -> {
+                                log.error("Failed to send OTP email: {}", e.getMessage());
+                                return Mono.error(new EmailSendException("Failed to send OTP email", e));
+                            })
+                            .then(createSession(savedUser))
+                            .then(Mono.fromCallable(() ->
+                                    retry.executeSupplier(() ->
+                                            userCreatedProducer.sendUserCreatedEvent(savedUser, "EMAIL").block()
+                                    )
+                            ))
+                            .doOnSuccess(result ->
+                                    log.info("User created event sent for email: {}", savedUser.getEmail()))
+                            .doOnError(e ->
+                                    log.error("Failed to send user created event for email: {}", savedUser.getEmail(), e))
+                            .thenReturn(generateAuthResponse(savedUser));
+                });
+    }
 
     public Mono<Void> resetPassword(@Valid ResetPasswordRequest request) {
         String email = request.getEmail().trim().toLowerCase();
@@ -111,7 +160,6 @@ public class AuthService {
                             .then();
                 });
     }
-
 
     private Mono<Void> validateTeacherCreation(SignupRequest request) {
         if (request.getRole() == Role.TEACHER) {
@@ -185,7 +233,6 @@ public class AuthService {
                     return userRepository.findActiveByEmail(normalizedEmail)
                             .switchIfEmpty(Mono.error(new ResourceNotFoundException("User not found")))
                             .flatMap(user -> {
-                                // Clear OTP after successful verification
                                 return redisOperations.delete("otp:" + normalizedEmail)
                                         .then(createSession(user))
                                         .thenReturn(generateAuthResponse(user))
@@ -218,8 +265,6 @@ public class AuthService {
                         .doOnSuccess(result -> log.info("Password reset OTP sent for: {}", normalizedEmail))
                         .then());
     }
-
-
 
     public Mono<Void> logout(String token) {
         return ReactiveSecurityContextHolder.getContext()
