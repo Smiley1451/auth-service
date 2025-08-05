@@ -24,6 +24,7 @@ END $$;
 CREATE TABLE IF NOT EXISTS users (
                                      id UUID PRIMARY KEY,
                                      email VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(50) NOT NULL UNIQUE
     password_hash VARCHAR(128),
     role role NOT NULL DEFAULT 'STUDENT',
     status status NOT NULL DEFAULT 'PENDING',

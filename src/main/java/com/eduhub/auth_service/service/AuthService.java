@@ -50,18 +50,31 @@ public class AuthService {
 
     public Mono<AuthResponse> signup(@Valid SignupRequest request) {
         request.normalize();
+
         return validateTeacherCreation(request)
-                .then(Mono.defer(() -> userRepository.findByEmail(request.getEmail())
-                        .flatMap(existingUser -> {
-                            if (existingUser.getStatus() == Status.PENDING) {
-                                return handlePendingUser(existingUser);
-                            } else if (existingUser.getStatus() == Status.ACTIVE) {
-                                return Mono.error(new UserAlreadyExistsException("Email already in use"));
-                            }
-                            return Mono.error(new IllegalStateException("Account in unexpected state"));
-                        })
-                        .switchIfEmpty(createNewUser(request))));
+                .then(Mono.defer(() ->
+
+                        userRepository.existsByUsername(request.getUsername())
+                                .flatMap(isUsernameTaken -> {
+                                    if (isUsernameTaken) {
+                                        return Mono.error(new UsernameAlreadyExistsException("Username already in use"));
+                                    }
+
+
+                                    return userRepository.findByEmail(request.getEmail())
+                                            .flatMap(existingUser -> {
+                                                if (existingUser.getStatus() == Status.PENDING) {
+                                                    return handlePendingUser(existingUser);
+                                                } else if (existingUser.getStatus() == Status.ACTIVE) {
+                                                    return Mono.error(new UserAlreadyExistsException("Email already in use"));
+                                                }
+                                                return Mono.error(new IllegalStateException("Account in unexpected state"));
+                                            })
+                                            .switchIfEmpty(createNewUser(request));
+                                })
+                ));
     }
+
 
     public Mono<Void> resendOtp(String email) {
         String normalizedEmail = email.trim().toLowerCase();
@@ -99,6 +112,7 @@ public class AuthService {
                 .thenReturn(new AuthResponse(
                         null,
                         user.getId().toString(),
+                        user.getUsername(),
                         user.getRole(),
                         user.getEmail(),
                         null
@@ -110,6 +124,7 @@ public class AuthService {
         return userRepository.saveWithTypeCasting(
                         userId,
                         request.getEmail(),
+                        request.getUsername(),
                         passwordEncoder.encode(request.getPassword()),
                         request.getRole().name(),
                         Status.PENDING.name(),
@@ -136,7 +151,14 @@ public class AuthService {
                                     log.info("User created event sent for email: {}", savedUser.getEmail()))
                             .doOnError(e ->
                                     log.error("Failed to send user created event for email: {}", savedUser.getEmail(), e))
-                            .thenReturn(generateAuthResponse(savedUser));
+                            .thenReturn(new AuthResponse(
+                                    null,
+                                    savedUser.getId().toString(),
+                                    savedUser.getUsername(),
+                                    savedUser.getRole(),
+                                    savedUser.getEmail(),
+                                    null
+                            ));
                 });
     }
 
@@ -194,6 +216,7 @@ public class AuthService {
                         user.getEmail(),
                         Collections.singleton(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
                 ),
+                user.getUsername(),
                 user.getId().toString(),
                 user.getRole(),
                 user.getEmail(),

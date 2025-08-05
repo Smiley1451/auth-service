@@ -12,6 +12,7 @@ import java.time.Instant;
 @AllArgsConstructor
 public class UserCreatedEvent {
     private String userId;
+    private String userName;
     private String email;
     private Role role;
     private Instant createdAt;

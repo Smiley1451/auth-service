@@ -22,7 +22,7 @@
 		<r2dbc-postgresql.version>1.0.5.RELEASE</r2dbc-postgresql.version>
 		<jjwt.version>0.12.6</jjwt.version>
 		<resilience4j.version>2.2.0</resilience4j.version>
-		<reactor-kafka.version>1.3.21</reactor-kafka.version>
+			<reactor-kafka.version>1.3.21</reactor-kafka.version>
 	</properties>
 
 	<dependencies>

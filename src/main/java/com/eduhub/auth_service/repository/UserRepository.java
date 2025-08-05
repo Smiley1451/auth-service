@@ -1,6 +1,8 @@
 package com.eduhub.auth_service.repository;
 
 import com.eduhub.auth_service.entity.User;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
@@ -24,13 +26,15 @@ public interface UserRepository extends ReactiveCrudRepository<User, String> {
     Mono<Boolean> existsByEmail(String email);
 
     @Query("""
-        INSERT INTO users (id, email, password_hash, role, status, created_at, updated_at, mfa_enabled)
-        VALUES (:id, :email, :passwordHash, :role::role, :status::status, :createdAt, :updatedAt, :mfaEnabled)
+        INSERT INTO users (id, email, username, password_hash, role, status, created_at, updated_at, mfa_enabled)
+        VALUES (:id, :email, :username, :passwordHash, :role::role, :status::status, :createdAt, :updatedAt, :mfaEnabled)
         RETURNING *
         """)
     Mono<User> saveWithTypeCasting(
             @Param("id") UUID id,
+
             @Param("email") String email,
+            @Param("username") String username,
             @Param("passwordHash") String passwordHash,
             @Param("role") String role,
             @Param("status") String status,
@@ -60,4 +64,6 @@ public interface UserRepository extends ReactiveCrudRepository<User, String> {
     );
 
     Mono<Object> deleteByStatusAndCreatedAtBefore(String name, LocalDateTime cutoff);
+
+    Mono<Boolean> existsByUsername(@NotBlank(message = "Username is required") @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters") String username);
 }

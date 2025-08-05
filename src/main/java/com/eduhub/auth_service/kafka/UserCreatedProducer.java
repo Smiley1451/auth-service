@@ -29,6 +29,7 @@ public class UserCreatedProducer {
     public Mono<SenderResult<Void>> sendUserCreatedEvent(User user, String source) {
         UserCreatedEvent event = new UserCreatedEvent(
                 user.getId().toString(),
+                user.getUsername(),
                 user.getEmail(),
                 user.getRole(),
                 Instant.now(),
