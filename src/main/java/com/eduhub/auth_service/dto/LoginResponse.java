@@ -24,7 +24,7 @@ public class LoginResponse {
         return LoginResponse.builder()
                 .token(authResponse.getToken())
                 .userId(authResponse.getUserId())
-                .role(authResponse.getRole())
+//                .role(authResponse.getRole())
                 .email(authResponse.getEmail())
                 .refreshToken(authResponse.getRefreshToken())
                 .mfaRequired(false)
