@@ -114,7 +114,7 @@ public class SmtpEmailService implements EmailService {
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>MARS-Botics</h1>
+                    <h1>ProHand's</h1>
                 </div>
                 <div class="content">
                     <h2>Email Verification Code</h2>

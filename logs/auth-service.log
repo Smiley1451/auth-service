@@ -1,24 +1,31 @@
-2025-11-26T23:07:54.494+05:30  INFO 22972 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Starting AuthServiceApplication using Java 21.0.8 with PID 22972 (D:\spring\prohands\auth-service\target\classes started by smile in D:\spring\prohands\auth-service)
-2025-11-26T23:07:54.524+05:30 DEBUG 22972 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Running with Spring Boot v3.5.3, Spring v6.2.8
-2025-11-26T23:07:54.526+05:30  INFO 22972 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : No active profile set, falling back to 1 default profile: "default"
-2025-11-26T23:07:54.826+05:30  INFO 22972 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-26T23:07:54.828+05:30  INFO 22972 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-26T23:07:58.012+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:07:58.017+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-11-26T23:07:58.503+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 469 ms. Found 3 R2DBC repository interfaces.
-2025-11-26T23:08:00.118+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:08:00.121+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-11-26T23:08:00.207+05:30  INFO 22972 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.BlacklistedTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:08:00.209+05:30  INFO 22972 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.OAuthUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:08:00.211+05:30  INFO 22972 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:08:00.211+05:30  INFO 22972 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 0 Redis repository interfaces.
-2025-11-26T23:08:11.049+05:30  INFO 22972 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2025-11-26T23:08:19.217+05:30  INFO 22972 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://ep-divine-leaf-ah0nqlrp.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require (PostgreSQL 17.5)
-2025-11-26T23:08:23.578+05:30  INFO 22972 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:01.166s)
-2025-11-26T23:08:28.858+05:30  INFO 22972 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
-2025-11-26T23:08:29.102+05:30  INFO 22972 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2025-11-26T23:08:31.621+05:30  INFO 22972 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-26T23:08:33.482+05:30  INFO 22972 --- [auth-service] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2025-12-06T11:39:31.109+05:30  INFO 38976 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Starting AuthServiceApplication using Java 21.0.8 with PID 38976 (D:\spring\prohands\auth-service\target\classes started by smile in D:\spring\prohands\auth-service)
+2025-12-06T11:39:31.134+05:30 DEBUG 38976 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-12-06T11:39:31.140+05:30  INFO 38976 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-06T11:39:31.285+05:30  INFO 38976 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-06T11:39:31.285+05:30  INFO 38976 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-06T11:39:34.880+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06T11:39:34.883+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-06T11:39:35.359+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 463 ms. Found 3 R2DBC repository interfaces.
+2025-12-06T11:39:36.425+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06T11:39:36.429+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-06T11:39:36.486+05:30  INFO 38976 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.BlacklistedTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T11:39:36.487+05:30  INFO 38976 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.OAuthUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T11:39:36.488+05:30  INFO 38976 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T11:39:36.489+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
+2025-12-06T11:39:38.031+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=bcfe8c84-72f4-3b4e-8dd7-5936b70c7999
+2025-12-06T11:39:38.405+05:30  WARN 38976 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-12-06T11:39:38.409+05:30  WARN 38976 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T11:39:38.414+05:30  WARN 38976 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-12-06T11:39:38.416+05:30  WARN 38976 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T11:39:38.419+05:30  WARN 38976 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T11:39:47.794+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-12-06T11:40:01.686+05:30  INFO 38976 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:01.196s)
+2025-12-06T11:40:06.806+05:30  INFO 38976 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2025-12-06T11:40:07.148+05:30  INFO 38976 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-12-06T11:40:09.710+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-06T11:40:10.198+05:30  INFO 38976 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-12-06T11:40:10.318+05:30  WARN 38976 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-06T11:40:10.554+05:30  INFO 38976 --- [auth-service] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:29092]
@@ -28,7 +35,6 @@
 	default.api.timeout.ms = 60000
 	enable.metrics.push = true
 	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
 	metric.reporters = []
 	metrics.num.samples = 2
 	metrics.recording.level = INFO
@@ -61,7 +67,6 @@
 	sasl.oauthbearer.clock.skew.seconds = 30
 	sasl.oauthbearer.expected.audience = null
 	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.header.urlencode = false
 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
@@ -94,70 +99,83 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2025-11-26T23:08:34.223+05:30  INFO 22972 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
-2025-11-26T23:08:34.230+05:30  INFO 22972 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
-2025-11-26T23:08:34.230+05:30  INFO 22972 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1764178714219
-2025-11-26T23:08:37.078+05:30  INFO 22972 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for auth-service-admin-0 unregistered
-2025-11-26T23:08:37.090+05:30  INFO 22972 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2025-11-26T23:08:37.092+05:30  INFO 22972 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-11-26T23:08:37.092+05:30  INFO 22972 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2025-11-26T23:08:37.362+05:30  INFO 22972 --- [auth-service] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
-2025-11-26T23:08:37.423+05:30  INFO 22972 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Started AuthServiceApplication in 44.837 seconds (process running for 48.283)
-2025-11-26T23:25:28.276+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:25:28.323+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:25:28.333+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:25:28.372+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:25:28.374+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:25:28.375+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:25:28.378+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:25:28.379+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:25:28.379+05:30 DEBUG 22972 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:25:28.486+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:25:28.486+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:25:28.486+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:25:28.699+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:25:28.715+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:25:28.888+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:25:28.889+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:25:28.890+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:25:28.890+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:25:28.892+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:25:28.894+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:25:28.896+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:25:28.897+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:25:28.897+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:25:28.899+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:25:28.901+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:25:28.903+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:25:28.906+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:25:28.906+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:25:28.907+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:25:28.910+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:25:28.914+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:25:28.919+05:30 DEBUG 22972 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:25:28.920+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:25:28.929+05:30 DEBUG 22972 --- [auth-service] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000001b08170d238@f05434c
-2025-11-26T23:25:28.948+05:30 DEBUG 22972 --- [auth-service] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:28:27.023+05:30  INFO 22972 --- [auth-service] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-26T23:28:27.069+05:30  INFO 22972 --- [auth-service] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2025-11-26T23:29:57.500+05:30  INFO 21644 --- [auth-service] [main] c.e.a.AuthServiceApplicationTests        : Starting AuthServiceApplicationTests using Java 21.0.8 with PID 21644 (started by smile in D:\spring\prohands\auth-service)
-2025-11-26T23:29:57.507+05:30 DEBUG 21644 --- [auth-service] [main] c.e.a.AuthServiceApplicationTests        : Running with Spring Boot v3.5.3, Spring v6.2.8
-2025-11-26T23:29:57.508+05:30  INFO 21644 --- [auth-service] [main] c.e.a.AuthServiceApplicationTests        : No active profile set, falling back to 1 default profile: "default"
-2025-11-26T23:30:02.318+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:30:02.318+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-11-26T23:30:03.053+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 697 ms. Found 3 R2DBC repository interfaces.
-2025-11-26T23:30:05.823+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:30:05.828+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-11-26T23:30:05.896+05:30  INFO 21644 --- [auth-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.BlacklistedTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:30:05.896+05:30  INFO 21644 --- [auth-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.OAuthUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:30:05.896+05:30  INFO 21644 --- [auth-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:30:05.899+05:30  INFO 21644 --- [auth-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
-2025-11-26T23:30:14.233+05:30  INFO 21644 --- [auth-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2025-11-26T23:30:19.450+05:30  INFO 21644 --- [auth-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://ep-divine-leaf-ah0nqlrp.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require (PostgreSQL 17.5)
-2025-11-26T23:30:23.633+05:30  INFO 21644 --- [auth-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:01.342s)
-2025-11-26T23:30:29.059+05:30  INFO 21644 --- [auth-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
-2025-11-26T23:30:29.307+05:30  INFO 21644 --- [auth-service] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2025-11-26T23:30:33.231+05:30  INFO 21644 --- [auth-service] [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2025-12-06T11:40:10.990+05:30  INFO 38976 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.1
+2025-12-06T11:40:10.996+05:30  INFO 38976 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: e2494e6ffb89f828
+2025-12-06T11:40:10.996+05:30  INFO 38976 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765001410986
+2025-12-06T11:40:12.796+05:30  INFO 38976 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for auth-service-admin-0 unregistered
+2025-12-06T11:40:12.817+05:30  INFO 38976 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-06T11:40:12.817+05:30  INFO 38976 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-06T11:40:12.819+05:30  INFO 38976 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-06T11:40:12.895+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-06T11:40:12.975+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-06T11:40:12.993+05:30  INFO 38976 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-06T11:40:13.025+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-06T11:40:13.829+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-06T11:40:13.837+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-12-06T11:40:13.840+05:30  INFO 38976 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-06T11:40:13.845+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765001413843 with initial instances count: 2
+2025-12-06T11:40:13.855+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2025-12-06T11:40:13.858+05:30  INFO 38976 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1765001413855, current=UP, previous=STARTING]
+2025-12-06T11:40:13.863+05:30  INFO 38976 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/Anand.mshome.net:auth-service:8081: registering service...
+2025-12-06T11:40:13.949+05:30  INFO 38976 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/Anand.mshome.net:auth-service:8081 - registration status: 204
+2025-12-06T11:40:14.102+05:30  INFO 38976 --- [auth-service] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2025-12-06T11:40:14.108+05:30  INFO 38976 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2025-12-06T11:40:14.213+05:30  INFO 38976 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Started AuthServiceApplication in 44.426 seconds (process running for 45.621)
+2025-12-06T11:45:13.052+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T11:50:13.096+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T11:55:13.113+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:00:13.125+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:05:13.144+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:10:13.176+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:15:13.189+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:20:13.202+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:25:13.204+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:30:13.217+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:35:13.259+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:40:13.270+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:45:13.278+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T12:50:13.295+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:02:16.031+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:07:16.068+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:12:16.073+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:17:16.082+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:22:16.087+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:27:16.110+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:32:16.183+05:30  INFO 38976 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:36:18.383+05:30  INFO 59116 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Starting AuthServiceApplication using Java 21.0.8 with PID 59116 (D:\spring\prohands\auth-service\target\classes started by smile in D:\spring\prohands\auth-service)
+2025-12-06T13:36:18.416+05:30 DEBUG 59116 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-12-06T13:36:18.437+05:30  INFO 59116 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-06T13:36:19.489+05:30  INFO 59116 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-06T13:36:19.494+05:30  INFO 59116 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-06T13:36:27.482+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06T13:36:27.486+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-12-06T13:36:28.298+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 793 ms. Found 3 R2DBC repository interfaces.
+2025-12-06T13:36:32.177+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06T13:36:32.201+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-06T13:36:32.472+05:30  INFO 59116 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.BlacklistedTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T13:36:32.475+05:30  INFO 59116 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.OAuthUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T13:36:32.478+05:30  INFO 59116 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-06T13:36:32.498+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 0 Redis repository interfaces.
+2025-12-06T13:36:35.984+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=bcfe8c84-72f4-3b4e-8dd7-5936b70c7999
+2025-12-06T13:36:37.022+05:30  WARN 59116 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-12-06T13:36:37.030+05:30  WARN 59116 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T13:36:37.039+05:30  WARN 59116 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-12-06T13:36:37.045+05:30  WARN 59116 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T13:36:37.058+05:30  WARN 59116 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-12-06T13:36:47.963+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-12-06T13:37:01.660+05:30  INFO 59116 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:01.320s)
+2025-12-06T13:37:06.599+05:30  INFO 59116 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2025-12-06T13:37:06.836+05:30  INFO 59116 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-12-06T13:37:09.880+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-06T13:37:10.724+05:30  INFO 59116 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-12-06T13:37:10.903+05:30  WARN 59116 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-06T13:37:11.152+05:30  INFO 59116 --- [auth-service] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:29092]
@@ -167,7 +185,6 @@
 	default.api.timeout.ms = 60000
 	enable.metrics.push = true
 	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
 	metric.reporters = []
 	metrics.num.samples = 2
 	metrics.recording.level = INFO
@@ -200,7 +217,6 @@
 	sasl.oauthbearer.clock.skew.seconds = 30
 	sasl.oauthbearer.expected.audience = null
 	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.header.urlencode = false
 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
@@ -233,524 +249,151 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2025-11-26T23:30:33.818+05:30  INFO 21644 --- [auth-service] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
-2025-11-26T23:30:33.830+05:30  INFO 21644 --- [auth-service] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
-2025-11-26T23:30:33.830+05:30  INFO 21644 --- [auth-service] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1764180033812
-2025-11-26T23:30:35.232+05:30  INFO 21644 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for auth-service-admin-0 unregistered
-2025-11-26T23:30:35.253+05:30  INFO 21644 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2025-11-26T23:30:35.255+05:30  INFO 21644 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-11-26T23:30:35.257+05:30  INFO 21644 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2025-11-26T23:30:35.381+05:30  INFO 21644 --- [auth-service] [main] c.e.a.AuthServiceApplicationTests        : Started AuthServiceApplicationTests in 38.91 seconds (process running for 43.436)
-2025-11-26T23:31:33.998+05:30  INFO 23564 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Starting AuthServiceApplication using Java 21.0.8 with PID 23564 (D:\spring\prohands\auth-service\target\classes started by smile in D:\spring\prohands\auth-service)
-2025-11-26T23:31:34.001+05:30 DEBUG 23564 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Running with Spring Boot v3.5.3, Spring v6.2.8
-2025-11-26T23:31:34.006+05:30  INFO 23564 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : No active profile set, falling back to 1 default profile: "default"
-2025-11-26T23:31:34.214+05:30  INFO 23564 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-26T23:31:34.217+05:30  INFO 23564 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-26T23:31:36.714+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:31:36.717+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-11-26T23:31:37.024+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 293 ms. Found 3 R2DBC repository interfaces.
-2025-11-26T23:31:37.835+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-11-26T23:31:37.841+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-11-26T23:31:37.898+05:30  INFO 23564 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.BlacklistedTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:31:37.898+05:30  INFO 23564 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.OAuthUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:31:37.898+05:30  INFO 23564 --- [auth-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.eduhub.auth_service.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-11-26T23:31:37.898+05:30  INFO 23564 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
-2025-11-26T23:31:44.965+05:30  INFO 23564 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2025-11-26T23:31:48.430+05:30  INFO 23564 --- [auth-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://ep-divine-leaf-ah0nqlrp.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require (PostgreSQL 17.5)
-2025-11-26T23:31:51.567+05:30  INFO 23564 --- [auth-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.927s)
-2025-11-26T23:31:56.141+05:30  INFO 23564 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
-2025-11-26T23:31:56.363+05:30  INFO 23564 --- [auth-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2025-11-26T23:31:58.657+05:30  INFO 23564 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-26T23:31:58.997+05:30  INFO 23564 --- [auth-service] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
-	auto.include.jmx.reporter = true
-	bootstrap.controllers = []
-	bootstrap.servers = [localhost:29092]
-	client.dns.lookup = use_all_dns_ips
-	client.id = auth-service-admin-0
-	connections.max.idle.ms = 300000
-	default.api.timeout.ms = 60000
-	enable.metrics.push = true
-	metadata.max.age.ms = 300000
-	metadata.recovery.strategy = none
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.max.ms = 1000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.header.urlencode = false
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-
-2025-11-26T23:31:59.241+05:30  INFO 23564 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
-2025-11-26T23:31:59.244+05:30  INFO 23564 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
-2025-11-26T23:31:59.244+05:30  INFO 23564 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1764180119238
-2025-11-26T23:32:00.176+05:30  INFO 23564 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for auth-service-admin-0 unregistered
-2025-11-26T23:32:00.196+05:30  INFO 23564 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2025-11-26T23:32:00.197+05:30  INFO 23564 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-11-26T23:32:00.198+05:30  INFO 23564 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2025-11-26T23:32:00.437+05:30  INFO 23564 --- [auth-service] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
-2025-11-26T23:32:00.486+05:30  INFO 23564 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Started AuthServiceApplication in 28.423 seconds (process running for 30.339)
-2025-11-26T23:32:33.428+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:32:33.428+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:32:33.428+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:32:33.443+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:32:33.444+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:32:33.445+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:32:33.448+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:32:33.448+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:32:33.449+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:32:33.490+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:32:33.491+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:32:33.493+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:32:33.509+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:32:33.515+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:32:33.526+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:32:33.531+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:32:33.531+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:32:33.533+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:32:33.536+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:32:33.536+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:32:33.539+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:32:33.541+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:32:33.543+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:32:33.544+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:32:33.544+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:32:33.544+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:32:33.544+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:32:33.548+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:32:33.548+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:32:33.548+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:32:33.553+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:32:33.559+05:30 DEBUG 23564 --- [auth-service] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:32:33.564+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:32:33.566+05:30 DEBUG 23564 --- [auth-service] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000002ac256d8fe8@7efc1cb1
-2025-11-26T23:32:33.579+05:30 DEBUG 23564 --- [auth-service] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:34:20.441+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:34:20.454+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:34:20.458+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:34:20.460+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:34:20.461+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:34:20.461+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:20.464+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:34:20.464+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:34:20.464+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:20.478+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:34:20.483+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:34:20.490+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:20.491+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:34:20.495+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:34:20.499+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:34:20.501+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:34:20.503+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:34:20.503+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:34:20.503+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:34:20.505+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:34:20.506+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:34:20.506+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:34:20.506+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:34:20.508+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:34:20.508+05:30 DEBUG 23564 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:34:20.508+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:34:20.511+05:30 DEBUG 23564 --- [auth-service] [parallel-3] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000002ac256d8fe8@7efc1cb1
-2025-11-26T23:34:20.516+05:30 DEBUG 23564 --- [auth-service] [parallel-3] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:34:20.573+05:30  INFO 23564 --- [auth-service] [reactor-http-nio-4] c.e.a.controller.AuthController          : Processing signup request for email: smileyj1451@gmail.com
-2025-11-26T23:34:26.844+05:30 ERROR 23564 --- [auth-service] [reactor-tcp-nio-1] c.e.a.controller.AuthController          : Signup failed for email: smileyj1451@gmail.com
-
-com.eduhub.auth_service.exception.UsernameAlreadyExistsException: Username already in use
-	at com.eduhub.auth_service.service.AuthService.lambda$signup$1(AuthService.java:60) ~[classes/:na]
-	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:547) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:988) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:251) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:194) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onNext(FluxDiscardOnCancel.java:91) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onNext(FluxDoFinally.java:113) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.emit(ReactorNettyClient.java:684) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:936) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.r2dbc.postgresql.client.SSLSessionHandlerAdapter.channelRead(SSLSessionHandlerAdapter.java:85) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1519) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1377) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1428) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:530) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:469) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-11-26T23:34:53.018+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:34:53.019+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:34:53.020+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:34:53.022+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:34:53.022+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:34:53.024+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:53.024+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:34:53.025+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:34:53.026+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:53.029+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:34:53.030+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:34:53.030+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:34:53.032+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:34:53.034+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:34:53.035+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:34:53.036+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:34:53.037+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:34:53.037+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:34:53.038+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:34:53.039+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:34:53.040+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:34:53.041+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:34:53.042+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:34:53.043+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:34:53.044+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:34:53.045+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:34:53.047+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:34:53.048+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:34:53.050+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:34:53.050+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:34:53.052+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:34:53.052+05:30 DEBUG 23564 --- [auth-service] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:34:53.055+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:34:53.055+05:30 DEBUG 23564 --- [auth-service] [parallel-4] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000002ac256d8fe8@7efc1cb1
-2025-11-26T23:34:53.058+05:30 DEBUG 23564 --- [auth-service] [parallel-4] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:34:53.066+05:30  INFO 23564 --- [auth-service] [reactor-http-nio-4] c.e.a.controller.AuthController          : Processing signup request for email: smileyishere1008@gmail.com
-2025-11-26T23:34:53.302+05:30 ERROR 23564 --- [auth-service] [reactor-tcp-nio-5] c.e.a.controller.AuthController          : Signup failed for email: smileyishere1008@gmail.com
-
-com.eduhub.auth_service.exception.UsernameAlreadyExistsException: Username already in use
-	at com.eduhub.auth_service.service.AuthService.lambda$signup$1(AuthService.java:60) ~[classes/:na]
-	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:547) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:988) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:251) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:194) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onNext(FluxDiscardOnCancel.java:91) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onNext(FluxDoFinally.java:113) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.emit(ReactorNettyClient.java:684) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:936) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.r2dbc.postgresql.client.SSLSessionHandlerAdapter.channelRead(SSLSessionHandlerAdapter.java:85) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1519) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1377) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1428) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:530) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:469) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-11-26T23:35:42.841+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:35:42.848+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:35:42.850+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:35:42.853+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:35:42.855+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:35:42.857+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:35:42.859+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:35:42.859+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:35:42.859+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:35:42.865+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:35:42.865+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:35:42.865+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:35:42.868+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:35:42.873+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:35:42.874+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:35:42.875+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:35:42.878+05:30 DEBUG 23564 --- [auth-service] [parallel-5] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:35:42.878+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:35:42.878+05:30 DEBUG 23564 --- [auth-service] [parallel-5] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000002ac256d8fe8@7efc1cb1
-2025-11-26T23:35:42.882+05:30 DEBUG 23564 --- [auth-service] [parallel-5] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:36:14.819+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /oauth2/authorization/{registrationId}'
-2025-11-26T23:36:14.819+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/{registrationId}'
-2025-11-26T23:36:14.821+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /default-ui.css'
-2025-11-26T23:36:14.822+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
-2025-11-26T23:36:14.822+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /login'
-2025-11-26T23:36:14.822+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:36:14.822+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
-2025-11-26T23:36:14.825+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'GET /logout'
-2025-11-26T23:36:14.825+05:30 DEBUG 23564 --- [auth-service] [reactor-http-nio-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:36:14.829+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
-2025-11-26T23:36:14.830+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'POST /logout'
-2025-11-26T23:36:14.831+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2025-11-26T23:36:14.833+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
-2025-11-26T23:36:14.833+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Checking match of request : '/auth/signup'; against '/auth/signup'
-2025-11-26T23:36:14.835+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
-2025-11-26T23:36:14.835+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/login'
-2025-11-26T23:36:14.838+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
-2025-11-26T23:36:14.839+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password-request'
-2025-11-26T23:36:14.841+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
-2025-11-26T23:36:14.841+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/reset-password'
-2025-11-26T23:36:14.843+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
-2025-11-26T23:36:14.843+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/mfa'
-2025-11-26T23:36:14.845+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
-2025-11-26T23:36:14.847+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/refresh'
-2025-11-26T23:36:14.847+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
-2025-11-26T23:36:14.849+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /auth/verify'
-2025-11-26T23:36:14.849+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
-2025-11-26T23:36:14.851+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/success'
-2025-11-26T23:36:14.851+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
-2025-11-26T23:36:14.853+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /api/auth/oauth/providers'
-2025-11-26T23:36:14.853+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
-2025-11-26T23:36:14.853+05:30 DEBUG 23564 --- [auth-service] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /auth/signup' doesn't match 'null /login/oauth2/code/**'
-2025-11-26T23:36:14.855+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2025-11-26T23:36:14.856+05:30 DEBUG 23564 --- [auth-service] [parallel-6] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/auth/signup' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000002ac256d8fe8@7efc1cb1
-2025-11-26T23:36:14.857+05:30 DEBUG 23564 --- [auth-service] [parallel-6] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2025-11-26T23:36:14.869+05:30  INFO 23564 --- [auth-service] [reactor-http-nio-7] c.e.a.controller.AuthController          : Processing signup request for email: anandgj1451@gmail.com
-2025-11-26T23:36:15.109+05:30 ERROR 23564 --- [auth-service] [reactor-tcp-nio-5] c.e.a.controller.AuthController          : Signup failed for email: anandgj1451@gmail.com
-
-com.eduhub.auth_service.exception.UsernameAlreadyExistsException: Username already in use
-	at com.eduhub.auth_service.service.AuthService.lambda$signup$1(AuthService.java:60) ~[classes/:na]
-	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onNext(FluxUsingWhen.java:348) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:547) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:988) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onNext(MonoFlatMapMany.java:251) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:194) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.util.FluxDiscardOnCancel$FluxDiscardOnCancelSubscriber.onNext(FluxDiscardOnCancel.java:91) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onNext(FluxDoFinally.java:113) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.drain(FluxCreate.java:880) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$BufferAsyncSink.next(FluxCreate.java:805) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxCreate$SerializedFluxSink.next(FluxCreate.java:163) ~[reactor-core-3.7.7.jar:3.7.7]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$Conversation.emit(ReactorNettyClient.java:684) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.emit(ReactorNettyClient.java:936) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:810) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.r2dbc.postgresql.client.ReactorNettyClient$BackendMessageSubscriber.onNext(ReactorNettyClient.java:716) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:129) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:224) ~[reactor-core-3.7.7.jar:3.7.7]
-	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:435) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115) ~[reactor-netty-core-1.2.7.jar:1.2.7]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.r2dbc.postgresql.client.SSLSessionHandlerAdapter.channelRead(SSLSessionHandlerAdapter.java:85) ~[r2dbc-postgresql-1.0.5.RELEASE.jar:1.0.5.RELEASE]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1519) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1377) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1428) ~[netty-handler-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:530) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:469) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.122.Final.jar:4.1.122.Final]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-11-26T23:43:43.003+05:30  INFO 23564 --- [auth-service] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-26T23:43:43.238+05:30  INFO 23564 --- [auth-service] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2025-12-06T13:37:11.662+05:30  INFO 59116 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.1
+2025-12-06T13:37:11.666+05:30  INFO 59116 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: e2494e6ffb89f828
+2025-12-06T13:37:11.666+05:30  INFO 59116 --- [auth-service] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765008431655
+2025-12-06T13:37:13.038+05:30  INFO 59116 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for auth-service-admin-0 unregistered
+2025-12-06T13:37:13.057+05:30  INFO 59116 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-06T13:37:13.057+05:30  INFO 59116 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-06T13:37:13.058+05:30  INFO 59116 --- [auth-service] [kafka-admin-client-thread | auth-service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-06T13:37:13.121+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-06T13:37:13.201+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-06T13:37:13.221+05:30  INFO 59116 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:37:13.251+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-06T13:37:13.252+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-06T13:37:13.253+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-06T13:37:13.253+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-06T13:37:13.254+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-06T13:37:13.255+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-06T13:37:13.255+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-06T13:37:14.262+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-06T13:37:14.271+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-12-06T13:37:14.292+05:30  INFO 59116 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-06T13:37:14.301+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765008434299 with initial instances count: 3
+2025-12-06T13:37:14.328+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2025-12-06T13:37:14.331+05:30  INFO 59116 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1765008434331, current=UP, previous=STARTING]
+2025-12-06T13:37:14.338+05:30  INFO 59116 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/auth-service:ecfd8f484343a7a2f651c01a7a30ed80: registering service...
+2025-12-06T13:37:14.455+05:30  INFO 59116 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/auth-service:ecfd8f484343a7a2f651c01a7a30ed80 - registration status: 204
+2025-12-06T13:37:14.615+05:30  INFO 59116 --- [auth-service] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2025-12-06T13:37:14.615+05:30  INFO 59116 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2025-12-06T13:37:14.729+05:30  INFO 59116 --- [auth-service] [restartedMain] c.e.auth_service.AuthServiceApplication  : Started AuthServiceApplication in 59.968 seconds (process running for 61.824)
+2025-12-06T13:40:46.124+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /oauth2/authorization/{registrationId}'
+2025-12-06T13:40:46.144+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /login/oauth2/code/{registrationId}'
+2025-12-06T13:40:46.194+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
+2025-12-06T13:40:46.196+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'GET /login'
+2025-12-06T13:40:46.196+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.205+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
+2025-12-06T13:40:46.205+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'GET /logout'
+2025-12-06T13:40:46.209+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.371+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-06T13:40:46.374+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'POST /logout'
+2025-12-06T13:40:46.374+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.388+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
+2025-12-06T13:40:46.388+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/signup'
+2025-12-06T13:40:46.395+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
+2025-12-06T13:40:46.395+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/login'
+2025-12-06T13:40:46.395+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
+2025-12-06T13:40:46.395+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/reset-password-request'
+2025-12-06T13:40:46.395+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
+2025-12-06T13:40:46.399+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/reset-password'
+2025-12-06T13:40:46.399+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/mfa'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/refresh'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/verify'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /api/auth/oauth/success'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /api/auth/oauth/providers'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /login/oauth2/code/**'
+2025-12-06T13:40:46.400+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.403+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/admin/**', method=null}
+2025-12-06T13:40:46.403+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /auth/admin/**'
+2025-12-06T13:40:46.404+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.406+05:30 DEBUG 59116 --- [auth-service] [parallel-3] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/info' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@557c024a
+2025-12-06T13:40:46.408+05:30 DEBUG 59116 --- [auth-service] [parallel-3] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@3a9ef1d0'
+2025-12-06T13:40:46.416+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization failed: Access Denied
+2025-12-06T13:40:46.438+05:30 DEBUG 59116 --- [auth-service] [parallel-3] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@3a9ef1d0'
+2025-12-06T13:40:46.444+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Trying to match using OrServerWebExchangeMatcher{matchers=[PathMatcherServerWebExchangeMatcher{pattern='/**', method=GET}]}
+2025-12-06T13:40:46.444+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=GET}
+2025-12-06T13:40:46.449+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/info'; against '/**'
+2025-12-06T13:40:46.449+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2025-12-06T13:40:46.449+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Trying to match using NegatedServerWebExchangeMatcher{matcher=OrServerWebExchangeMatcher{matchers=[PathMatcherServerWebExchangeMatcher{pattern='/favicon.*', method=null}]}}
+2025-12-06T13:40:46.452+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/favicon.*', method=null}
+2025-12-06T13:40:46.452+05:30 DEBUG 59116 --- [auth-service] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/info' doesn't match 'null /favicon.*'
+2025-12-06T13:40:46.452+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:46.453+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .w.s.u.m.NegatedServerWebExchangeMatcher : matches = true
+2025-12-06T13:40:46.461+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Trying to match using MediaTypeRequestMatcher [matchingMediaTypes=[text/html], useEquals=false, ignoredMediaTypes=[*/*]]
+2025-12-06T13:40:46.466+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.u.m.MediaTypeServerWebExchangeMatcher : httpRequestMediaTypes=[text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2025-12-06T13:40:46.466+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.u.m.MediaTypeServerWebExchangeMatcher : Processing text/html
+2025-12-06T13:40:46.466+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.u.m.MediaTypeServerWebExchangeMatcher : text/html .isCompatibleWith text/html = true
+2025-12-06T13:40:46.471+05:30 DEBUG 59116 --- [auth-service] [parallel-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : All requestMatchers returned true
+2025-12-06T13:40:46.471+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.s.WebSessionServerRequestCache : Request added to WebSession: '/actuator/info'
+2025-12-06T13:40:46.474+05:30 DEBUG 59116 --- [auth-service] [parallel-3] o.s.s.w.s.DefaultServerRedirectStrategy  : Redirecting to '/login'
+2025-12-06T13:40:46.558+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /login' doesn't match 'null /oauth2/authorization/{registrationId}'
+2025-12-06T13:40:46.558+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /login' doesn't match 'null /login/oauth2/code/{registrationId}'
+2025-12-06T13:40:46.564+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
+2025-12-06T13:40:46.564+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/login'; against '/login'
+2025-12-06T13:40:46.565+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2025-12-06T13:40:52.056+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /oauth2/authorization/{registrationId}'
+2025-12-06T13:40:52.057+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /login/oauth2/code/{registrationId}'
+2025-12-06T13:40:52.057+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
+2025-12-06T13:40:52.057+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'GET /login'
+2025-12-06T13:40:52.059+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:52.060+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=GET}
+2025-12-06T13:40:52.060+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'GET /logout'
+2025-12-06T13:40:52.060+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:52.069+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-06T13:40:52.070+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'POST /logout'
+2025-12-06T13:40:52.070+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:52.072+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/signup', method=null}
+2025-12-06T13:40:52.074+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/signup'
+2025-12-06T13:40:52.074+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/login', method=null}
+2025-12-06T13:40:52.076+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/login'
+2025-12-06T13:40:52.078+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password-request', method=null}
+2025-12-06T13:40:52.078+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/reset-password-request'
+2025-12-06T13:40:52.079+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/reset-password', method=null}
+2025-12-06T13:40:52.079+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/reset-password'
+2025-12-06T13:40:52.081+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/mfa', method=null}
+2025-12-06T13:40:52.081+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/mfa'
+2025-12-06T13:40:52.081+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/refresh', method=null}
+2025-12-06T13:40:52.081+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/refresh'
+2025-12-06T13:40:52.083+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/verify', method=null}
+2025-12-06T13:40:52.084+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/verify'
+2025-12-06T13:40:52.084+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/success', method=null}
+2025-12-06T13:40:52.084+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /api/auth/oauth/success'
+2025-12-06T13:40:52.086+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/api/auth/oauth/providers', method=null}
+2025-12-06T13:40:52.086+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /api/auth/oauth/providers'
+2025-12-06T13:40:52.088+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login/oauth2/code/**', method=null}
+2025-12-06T13:40:52.088+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /login/oauth2/code/**'
+2025-12-06T13:40:52.089+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:52.093+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/auth/admin/**', method=null}
+2025-12-06T13:40:52.094+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /favicon.ico' doesn't match 'null /auth/admin/**'
+2025-12-06T13:40:52.094+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2025-12-06T13:40:52.094+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/favicon.ico' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@557c024a
+2025-12-06T13:40:52.094+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@3a9ef1d0'
+2025-12-06T13:40:52.096+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization failed: Access Denied
+2025-12-06T13:40:52.099+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@3a9ef1d0'
+2025-12-06T13:40:52.100+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Trying to match using OrServerWebExchangeMatcher{matchers=[PathMatcherServerWebExchangeMatcher{pattern='/**', method=GET}]}
+2025-12-06T13:40:52.100+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=GET}
+2025-12-06T13:40:52.103+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/favicon.ico'; against '/**'
+2025-12-06T13:40:52.103+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2025-12-06T13:40:52.104+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Trying to match using NegatedServerWebExchangeMatcher{matcher=OrServerWebExchangeMatcher{matchers=[PathMatcherServerWebExchangeMatcher{pattern='/favicon.*', method=null}]}}
+2025-12-06T13:40:52.104+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/favicon.*', method=null}
+2025-12-06T13:40:52.105+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/favicon.ico'; against '/favicon.*'
+2025-12-06T13:40:52.105+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2025-12-06T13:40:52.105+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] .w.s.u.m.NegatedServerWebExchangeMatcher : matches = false
+2025-12-06T13:40:52.105+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] .s.s.w.s.u.m.AndServerWebExchangeMatcher : Did not match
+2025-12-06T13:40:52.107+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.DefaultServerRedirectStrategy  : Redirecting to '/login'
+2025-12-06T13:40:52.123+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /login' doesn't match 'null /oauth2/authorization/{registrationId}'
+2025-12-06T13:40:52.124+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Request 'GET /login' doesn't match 'null /login/oauth2/code/{registrationId}'
+2025-12-06T13:40:52.124+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/login', method=GET}
+2025-12-06T13:40:52.124+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] athPatternParserServerWebExchangeMatcher : Checking match of request : '/login'; against '/login'
+2025-12-06T13:40:52.124+05:30 DEBUG 59116 --- [auth-service] [reactor-http-nio-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2025-12-06T13:42:13.268+05:30  INFO 59116 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:47:13.279+05:30  INFO 59116 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:52:13.303+05:30  INFO 59116 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T13:57:13.335+05:30  INFO 59116 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-06T14:02:13.346+05:30  INFO 59116 --- [auth-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

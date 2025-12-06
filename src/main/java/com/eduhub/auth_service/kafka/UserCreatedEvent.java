@@ -18,3 +18,4 @@ public class UserCreatedEvent {
     private Instant createdAt;
     private String source;
 }
+
